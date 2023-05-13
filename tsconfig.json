@@ -1,0 +1,23 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": [
+      "element-plus/global"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "ignoreDeprecations": "5.0",
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    }
+  ]
+}
