@@ -1,194 +1,198 @@
 <template>
-  <el-table :data="tableData" style="width:85%;" max-height="550" border>
-    <el-table-column  prop="date" label="Date" width="150" />
-    <el-table-column prop="name" label="Name" width="120" />
-    <el-table-column prop="state" label="State" width="120" />
-    <el-table-column prop="city" label="City" width="120" />
-    <el-table-column prop="address" label="Address" width="600" />
-    <el-table-column fixed="right" label="Operations" width="250px">
-      <template #default="scope">
-        <el-button link type="primary" size="small" @click.prevent="deleteRow(scope.$index)">
-          Remove
-        </el-button>
-        <el-button link type="primary" size="small" @click.prevent="deleteRow(scope.$index)">
-          Remove
-        </el-button>
+  <div class="book-content">
+    <div class="book-content__card">
+      <el-card>
+        <el-button type="success"><el-icon>
+            <CirclePlus />
+          </el-icon>添加</el-button>
+      </el-card>
+    </div>
+    <!-- 表格数据展示 -->
+    <el-table v-loading="loading" element-loading-text="正在加载中……" :data="tableData" border max-height="500"
+      class="book-content__table">
+      <el-table-column prop="date" label="名称" align="center" />
+      <el-table-column prop="name" label="角色" align="center" />
+      <el-table-column prop="state" label="账号" align="center" />
+      <el-table-column prop="city" label="电话" align="center" />
+      <el-table-column prop="address" label="状态" align="center" />
+      <el-table-column label="头像" align="center">
+        <template #default="scope">
+          <el-image lazy :src="scope.row.images" alt="" style="width: 50px;height: 50px" />
+        </template>
+      </el-table-column>
+      <el-table-column fixed="right" label="操作" width="180px" align="center">
+        <template #default="scope">
+          <div class="book-content__operations">
+            <el-button type="danger"><el-icon>
+                <Lock />
+              </el-icon>冻结</el-button>
+            <el-button type="success">
+              <el-icon>
+                <Key />
+              </el-icon>解冻
+            </el-button>
+          </div>
+        </template>
+      </el-table-column>
 
-      </template>
-    </el-table-column>
+    </el-table>
 
-  </el-table>
-  <el-pagination
-      v-model:current-page="currentPage3"
-      v-model:page-size="pageSize3"
-      :small="small"
-      :disabled="disabled"
-      :background="background"
-      layout="prev, pager, next, jumper"
-      :total="1000"
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-    />
+    <!-- 分页 -->
+    <div class="book-content__pagination">
+      <el-pagination small background layout="prev, pager, next" :total="50" class="mt-4" @size-change="handleSizeChange"
+        @current-change="handleCurrentChange" />
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import dayjs from 'dayjs'
-const currentPage3 = ref(5)
-const pageSize3 = ref(100)
-const small = ref(false)
-const background = ref(false)
-const disabled = ref(false)
-const now = new Date()
+import { ref, onMounted } from 'vue'
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false
+  }, 1000)
+})
+
+import {
+  Lock,
+  Key
+} from '@element-plus/icons-vue'
+
+// loading 加载
+const loading = ref(true);
+
+// 
 const handleSizeChange = (val: number) => {
   console.log(`${val} items per page`)
 }
 const handleCurrentChange = (val: number) => {
   console.log(`current page: ${val}`)
 }
+
+
 const tableData = ref([
   {
     date: '2016-05-01',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-02',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-03',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-01',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-02',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
-  },
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-01',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-02',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-03',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-01',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
   {
     date: '2016-05-02',
-    name: 'Tom',
+    name: 'IT工业项目经理成长手记',
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    
+    images: 'https://b.codeslive.top/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+
   },
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    
-  },
-  {
-    date: '2016-05-01',
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    
-  },
-  {
-    date: '2016-05-02',
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    
-  },
-  {
-    date: '2016-05-03',
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    
-  },
+
+
 ])
-
-const deleteRow = (index: number) => {
-  tableData.value.splice(index, 1)
-}
-
-const onAddItem = () => {
-  now.setDate(now.getDate() + 1)
-  tableData.value.push({
-    date: dayjs(now).format('YYYY-MM-DD'),
-    name: 'Tom',
-    state: 'California',
-    city: 'Los Angeles',
-    address: 'No. 189, Grove St, Los Angeles',
-    
-  })
-}
 </script>
 
 <style scoped lang="scss">
-.el-pagination{
-  height: 30px !important;
-}
+// 最大的容器
+@include b(content) {
 
+  @include e(card) {
+    margin-top: 5px;
+    height: 70px;
+  }
+
+  // 表格数据
+  @include e(table) {
+    // margin-top: 30px;
+    border-radius: 5px;
+    border: 10px;
+  }
+
+  // 操作按钮
+  @include e(operations) {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  // 分页
+  @include e(pagination) {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
 </style>

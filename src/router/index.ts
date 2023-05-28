@@ -24,7 +24,7 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/login/index.vue'),
-      meta:{
+      meta: {
         title: '登录',
         transitionName: "animate__fadeIn"
       }
@@ -109,7 +109,7 @@ const router = createRouter({
           name: 'type',
           component: () => import('../views/admin/adminType/index.vue'),
           meta: {
-            title: '后台管理-类型管理',
+            title: '类型管理',
             transitionName: "animate__bounceInLeft",
           }
         },
@@ -118,7 +118,7 @@ const router = createRouter({
           name: 'product',
           component: () => import('../views/admin/adminProduct/index.vue'),
           meta: {
-            title: '后台管理-商品管理',
+            title: '商品管理',
             transitionName: "animate__bounceInLeft",
           }
         },
@@ -127,7 +127,7 @@ const router = createRouter({
           name: 'carousel',
           component: () => import('../views/admin/adminCarousel/index.vue'),
           meta: {
-            title: '后台管理-热度图片',
+            title: '热度图片',
             transitionName: "animate__bounceInLeft",
           }
         },
@@ -136,7 +136,7 @@ const router = createRouter({
           name: 'orders',
           component: () => import('../views/admin/adminOrders/index.vue'),
           meta: {
-            title: '后台管理-订单管理',
+            title: '订单管理',
             transitionName: "animate__bounceInLeft",
           }
         },
@@ -145,7 +145,7 @@ const router = createRouter({
           name: 'users',
           component: () => import('../views/admin/adminUsers/index.vue'),
           meta: {
-            title: '后台管理-用户列表',
+            title: '用户列表',
             transitionName: "animate__bounceInLeft",
           }
         },
@@ -154,7 +154,7 @@ const router = createRouter({
           name: 'register',
           component: () => import('../views/admin/adminRegister/index.vue'),
           meta: {
-            title: '后台管理-管理员添加',
+            title: '管理员添加',
             transitionName: "animate__bounceInLeft",
           }
         },
@@ -165,7 +165,7 @@ const router = createRouter({
 });
 
 // 路由白名单
-const whileList = ['/home', '/login','/home/detail','/admin','/admin/product','/admin/orders','/admin/users','/admin/carousel'];
+const whileList = ['/home', '/login', '/home/detail', '/admin', '/admin/product', '/admin/orders', '/admin/users', '/admin/carousel','/admin/type','/admin/register'];
 
 // 路由守卫 开始
 router.beforeEach((to, from, next) => {
@@ -178,9 +178,10 @@ router.beforeEach((to, from, next) => {
     next();
   } else {
     // 否则跳转到登录页面
-    next('/');
+    next('/login');
   }
 });
+
 
 // 路由守卫 结束
 router.afterEach(() => {
