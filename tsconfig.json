@@ -5,11 +5,7 @@
     "types": [
       "element-plus/global"
     ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
+    "moduleResolution": "node",
     "ignoreDeprecations": "5.0",
   },
   "references": [

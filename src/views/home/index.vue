@@ -1,7 +1,7 @@
 <template>
   <div class="book-box">
     <div class="book-box__page">
-      <Header></Header>
+      <!-- <Header></Header> -->
       <RouterView></RouterView>
     </div>
   </div>
@@ -9,7 +9,7 @@
 
 <script setup lang='ts'>
 import { ref } from "vue";
-import Header from "../../components/Layout/Home/Header/index.vue";
+// import Header from "../../components/Layout/Home/Header/index.vue";
 
 </script>
 

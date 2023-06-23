@@ -8,11 +8,13 @@ import viteProdConfig from "./config/vite.production";
 // 策略模式
 const envResolver = {
   "serve": () => {
-    console.log("当前环境为开发环境, 项目正在运行中……");
+    // console.log("当前环境为开发环境, 项目正在启动中……");
+    console.log('\x1B[34m 当前环境为开发环境, 项目正在启动中……');
     return ({ ...viteProdConfig, ...viteDevConfig });
   },
   "build": () => {
-    console.log("当前环境为生产环境, 项目正在打包中……");
+    // console.log("当前环境为生产环境, 项目正在打包中……");
+    console.log('\x1B[31m当前环境为生产环境, 项目正在打包中, 请勿中断……');
     return ({ ...viteProdConfig, ...viteDevConfig });
   }
 }

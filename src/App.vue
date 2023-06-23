@@ -16,7 +16,7 @@ import "animate.css";
 
 <style lang="scss">
 #app {
-  @include bfc;
+  // @include bfc;
   // height: 100%;
 }
 
