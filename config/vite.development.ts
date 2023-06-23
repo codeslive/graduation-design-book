@@ -14,7 +14,7 @@ import { fileURLToPath, URL } from 'node:url';
 export default defineConfig({
   server: {
     port: 5173, // 启动端口
-    host: '',
+    host: '', // 设置主机地址
     open: false // 自动打开浏览器
   },
 
@@ -24,10 +24,10 @@ export default defineConfig({
       typescript: true, // 检查 TypeScript 语法
     }),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()], // AutoImport 设置按需引入插件
     }),
     Components({
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver()], // Components 设置按需引入插件
     }),
   ],
   css: {
