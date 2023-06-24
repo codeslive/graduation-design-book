@@ -77,7 +77,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -86,7 +86,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -95,7 +95,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -104,7 +104,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -113,7 +113,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -122,7 +122,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -131,7 +131,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -140,7 +140,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -149,7 +149,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
   {
@@ -158,7 +158,7 @@ const tableData = ref([
     state: 'California',
     city: 'Los Angeles',
     address: 'No. 189, Grove St, Los Angeles',
-    images: 'http://120.76.133.119:1111/api/public/showImg/7e68bb5e-704d-4654-840b-a7221716042b'
+    images: 'https://static-youdao-note.oss-cn-shenzhen.aliyuncs.com/images/202306211525473.webp?x-oss-process=style/webp'
 
   },
 

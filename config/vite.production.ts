@@ -5,9 +5,12 @@ import viteCompression from 'vite-plugin-compression';
 // Vite 构建工具的 Vue 插件
 import vue from '@vitejs/plugin-vue';
 // element-plus 的按需引入插件
-import AutoImport from 'unplugin-auto-import/vite';
-import Components from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+// import AutoImport from 'unplugin-auto-import/vite';
+// import Components from 'unplugin-vue-components/vite';
+// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+
+// 导入 vite-plugin-cdn-import 插件
+import ViteCDNPlugin from 'vite-plugin-cdn-import';
 
 export default defineConfig({
   
@@ -49,12 +52,40 @@ export default defineConfig({
       ext: '.gz', // ext 设置压缩后的文件后缀名, 默认为 '.gz'
     }), // viteCompression 设置压缩插件
     vue(), // 这个配置是 vite-plugin-vue 插件 vite-plugin-vue 插件能够让我们在 Vue 项目中使用单文件组件
-    AutoImport({
-      resolvers: [ElementPlusResolver()], // AutoImport 设置 element-plus 按需引入插件
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()], // Components 设置 element-plus 按需引入插件
-    }),
+
+    // AutoImport({
+    //   resolvers: [ElementPlusResolver()], // AutoImport 设置 element-plus 按需引入插件
+    // }),
+    // Components({
+    //   resolvers: [ElementPlusResolver()], // Components 设置 element-plus 按需引入插件
+    // }),
+
+    // cdn 配置
+    ViteCDNPlugin({
+      modules: [
+        {
+          name: 'axios',
+          var: 'axios',
+          path: '//cdn.bootcdn.net/ajax/libs/axios/1.4.0/axios.min.js'
+        },
+        {
+          name:"vue",
+          var:"Vue",
+          path:"//cdn.bootcdn.net/ajax/libs/vue/3.2.47/vue.global.prod.js",
+        },
+        {
+          name:"vue-demi",
+          var:"VueDemi",
+          path:"//unpkg.com/vue-demi@0.14.5"
+        },
+        {
+          name:"element-plus",
+          var:"ElementPlus",
+          path:"//unpkg.com/element-plus@2.3.4",
+          css:"//unpkg.com/element-plus/dist/index.css"
+        },
+      ]
+    })
   ],
 
 });

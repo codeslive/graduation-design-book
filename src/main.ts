@@ -13,6 +13,9 @@ import axios from 'axios';
 import VueAxios from 'vue-axios';
 const app = createApp(App);
 
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 //配置公共请求路径
 const http = import.meta.env.VITE_HTTP; // 读取 开发 | 生产 环境变量
 axios.defaults.baseURL = http; // 配置 axios 请求的地址
@@ -22,9 +25,6 @@ app.config.globalProperties.$Imgurl = http; // 配置全局属性
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
-
-let a= 1;
-a="123"
 
 // mock 数据获取
 const getUsers = async () => {
@@ -36,5 +36,5 @@ getUsers();
 
 
 
-app.use(createPinia()).use(router).use(VueAxios, axios).mount("#app");
+app.use(createPinia()).use(router).use(VueAxios, axios).use(ElementPlus).mount("#app");
 
