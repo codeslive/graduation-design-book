@@ -4,18 +4,18 @@ import { defineConfig } from 'vite'
 import viteDevConfig from "./config/vite.development";
 // 引入生产环境配置文件
 import viteProdConfig from "./config/vite.production";
+// 引入baseconsfig文件
+import viteBaseConfig from "./config/vite.baseconfig";
 
 // 策略模式
 const envResolver = {
   "serve": () => {
-    // console.log("当前环境为开发环境, 项目正在启动中……");
     console.log('\x1B[34m 当前环境为开发环境, 项目正在启动中……');
-    return ({ ...viteProdConfig, ...viteDevConfig });
+    return ({ ...viteBaseConfig, ...viteDevConfig });
   },
   "build": () => {
-    // console.log("当前环境为生产环境, 项目正在打包中……");
     console.log('\x1B[31m当前环境为生产环境, 项目正在打包中, 请勿中断……');
-    return ({ ...viteProdConfig, ...viteDevConfig });
+    return ({ ...viteBaseConfig, ...viteProdConfig });
   }
 }
 
