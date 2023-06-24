@@ -8,8 +8,6 @@ import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-// 用于将 URL 转换为文件路径
-import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
 
@@ -53,12 +51,6 @@ export default defineConfig({
     }),
   ],
 
-  // 设置别名
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('../src', import.meta.url))
-    }
-  },
 });
 
 
