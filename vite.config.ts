@@ -1,4 +1,4 @@
-// Vite 构建工具的配置文件 
+// Vite 构建工具的配置文件, 用于提示 vite 相关配置 不配置就没有提示
 import { defineConfig } from 'vite'
 // 引入开发环境配置文件
 import viteDevConfig from "./config/vite.development";
