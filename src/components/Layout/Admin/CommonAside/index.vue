@@ -1,6 +1,5 @@
 <template>
     <div class="book-menu">
-        <div class="book-menu__title">后台管理系统</div>
         <el-radio-group style="margin-bottom: 20px">
         </el-radio-group>
         <el-menu class="el-menu-vertical-demo" router>
@@ -87,3 +86,5 @@ const menuList = [
     }
 }
 </style>
+
+

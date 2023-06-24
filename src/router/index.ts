@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/',
       redirect: {
-        name: 'login'
+        name: 'admin'
       }
     },
 
@@ -31,67 +31,67 @@ const router = createRouter({
     },
 
     // 前台商品展示页面
-    {
-      path: '/home',
-      name: 'home',
-      component: () => import('../views/home/index.vue'),
-      meta: {
-        title: '首页',
-        transitionName: "animate__fadeIn",
-        icon: 'el-icon-s-home'
-      },
-      children: [
-        {
-          path: '',
-          name: 'index',
-          component: () => import('../views/home/homeIndex/index.vue'),
-          meta: {
-            title: '首页',
-            transitionName: "animate__fadeIn"
-          }
-        },
-        {
-          path: 'detail',
-          name: 'detail',
-          component: () => import('../views/home/homeDetail/index.vue'),
-          meta: {
-            title: '首页-商品详情',
-            transitionName: "animate__fadeIn"
-          }
-        },
-        {
-          path: 'cart',
-          name: 'cart',
-          component: () => import('../views/home/homeCart/index.vue'),
-          meta: {
-            title: '首页-购物车',
-            transitionName: "animate__fadeIn",
-            role: 'P'
-          }
-        },
-        {
-          path: 'orders',
-          name: 'orders',
-          component: () => import('../views/home/homeOrders/index.vue'),
-          meta: {
-            title: '首页-我的订单',
-            transitionName: "animate__fadeIn",
-            role: 'P'
-          }
-        },
-        {
-          path: 'profile',
-          name: 'profile',
-          component: () => import('../views/home/homeProfile/index.vue'),
-          meta: {
-            title: '首页-个人中心',
-            transitionName: "animate__fadeIn",
-            role: 'P'
-          }
-        },
-      ]
+    // {
+    //   path: '/home',
+    //   name: 'home',
+    //   component: () => import('../views/home/index.vue'),
+    //   meta: {
+    //     title: '首页',
+    //     transitionName: "animate__fadeIn",
+    //     icon: 'el-icon-s-home'
+    //   },
+    //   children: [
+    //     {
+    //       path: '',
+    //       name: 'index',
+    //       component: () => import('../views/home/homeIndex/index.vue'),
+    //       meta: {
+    //         title: '首页',
+    //         transitionName: "animate__fadeIn"
+    //       }
+    //     },
+    //     {
+    //       path: 'detail',
+    //       name: 'detail',
+    //       component: () => import('../views/home/homeDetail/index.vue'),
+    //       meta: {
+    //         title: '首页-商品详情',
+    //         transitionName: "animate__fadeIn"
+    //       }
+    //     },
+    //     {
+    //       path: 'cart',
+    //       name: 'cart',
+    //       component: () => import('../views/home/homeCart/index.vue'),
+    //       meta: {
+    //         title: '首页-购物车',
+    //         transitionName: "animate__fadeIn",
+    //         role: 'P'
+    //       }
+    //     },
+    //     {
+    //       path: 'orders',
+    //       name: 'orders',
+    //       component: () => import('../views/home/homeOrders/index.vue'),
+    //       meta: {
+    //         title: '首页-我的订单',
+    //         transitionName: "animate__fadeIn",
+    //         role: 'P'
+    //       }
+    //     },
+    //     {
+    //       path: 'profile',
+    //       name: 'profile',
+    //       component: () => import('../views/home/homeProfile/index.vue'),
+    //       meta: {
+    //         title: '首页-个人中心',
+    //         transitionName: "animate__fadeIn",
+    //         role: 'P'
+    //       }
+    //     },
+    //   ]
 
-    },
+    // },
 
     // 后台管理页面
     {
@@ -178,7 +178,7 @@ router.beforeEach((to, from, next) => {
     next();
   } else {
     // 否则跳转到登录页面
-    next('/login');
+    next('/admin');
   }
 });
 

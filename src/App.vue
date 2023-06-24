@@ -15,12 +15,5 @@ import "animate.css";
 </script>
 
 <style lang="scss">
-#app {
-  // @include bfc;
-  // height: 100%;
-}
 
-// html,body{
-//   height: 100%;
-// }
 </style>

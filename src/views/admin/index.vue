@@ -1,5 +1,5 @@
 <template>
-  <div class="book-box">
+  <!-- <div class="book-box">
     <div>
       <Menu></Menu>
     </div>
@@ -7,25 +7,42 @@
       <AdminHeader></AdminHeader>
       <Content></Content>
     </div>
+  </div> -->
+
+
+  <div class="common-layout admin-layout">
+    <el-container>
+      <CommonAside></CommonAside>
+      <el-container>
+        <el-header>
+          <CommonHeader></CommonHeader>
+        </el-header>
+        <el-main>
+          <RouterView></RouterView>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script setup lang='ts'>
-import { ref } from "vue";
-import AdminHeader from "@/components/Layout/Admin/AdminHeader/index.vue";
-import Menu from "@/components/Layout/Admin/Menu/index.vue";
-import Content from "@/components/Layout/Admin/Content/index.vue";
+
+import CommonHeader from "@/components/Layout/Admin/CommonHeader/index.vue";
+import CommonAside from "@/components/Layout/Admin/CommonAside/index.vue";
+
 </script>
 
 <style scoped lang="scss">
-@include b(box) {
-  @include bfc;
-  display: flex;
+@include b(layout) {}
 
-  @include e(right) {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-}
+// @include b(box) {
+//   @include bfc;
+//   display: flex;
+
+//   @include e(right) {
+//     display: flex;
+//     flex-direction: column;
+//     flex: 1;
+//   }
+// }
 </style>
