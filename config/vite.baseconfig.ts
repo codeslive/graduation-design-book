@@ -9,7 +9,7 @@ import checker from "vite-plugin-checker";
 
 export default defineConfig({
   optimizeDeps: {
-    exclude: [''] // 将指定数组中的以来进行依赖预购建
+    exclude: [''] // 将指定数组中的依赖排除, 用于排除不需要打包的依赖
   },
 
   plugins:[
