@@ -38,16 +38,16 @@ export default defineConfig({
     minify: 'terser', // minify 设置是否压缩代码, 可选值为 boolean | 'terser' | 'esbuild', 默认为 terser
     assetsInlineLimit: 4096, // assetsInlineLimit 设置是否将小于指定大小的文件转换为 base64 格式, 默认为 4096, 设置为 0 时则关闭该功能
     outDir: "dist", // outDir 设置打包后的文件夹名称
-    assetsDir: "static" // assetsDir 设置静态资源的文件夹名称
+    assetsDir: "static", // assetsDir 设置静态资源的文件夹名称
   },
   plugins: [
     viteCompression(), // viteCompression 设置压缩插件
     vue(), // 这个配置是 vite-plugin-vue 插件 vite-plugin-vue 插件能够让我们在 Vue 项目中使用单文件组件
     AutoImport({
-      resolvers: [ElementPlusResolver()], // AutoImport 设置按需引入插件
+      resolvers: [ElementPlusResolver()], // AutoImport 设置 element-plus 按需引入插件
     }),
     Components({
-      resolvers: [ElementPlusResolver()], // Components 设置按需引入插件
+      resolvers: [ElementPlusResolver()], // Components 设置 element-plus 按需引入插件
     }),
   ],
 
