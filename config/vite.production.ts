@@ -60,7 +60,7 @@ export default defineConfig({
     //   resolvers: [ElementPlusResolver()], // Components 设置 element-plus 按需引入插件
     // }),
 
-    // cdn 配置
+    // cdn 配置, 版本锁定, 防止 cdn 版本更新导致项目报错
     ViteCDNPlugin({
       modules: [
         {
