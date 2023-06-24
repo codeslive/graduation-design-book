@@ -8,14 +8,15 @@ import checker from "vite-plugin-checker";
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-
+// 引入 mockjs 插件
+import { viteMockServe } from 'vite-plugin-mock';
 export default defineConfig({
   server: {
     port: 5173, // 启动端口
-    host: '', // 设置主机地址
+    // host: '', // 设置主机地址
     open: false // 自动打开浏览器
   },
-  
+
   plugins: [
     vue(), // 这个配置是 vite-plugin-vue 插件
     checker({
@@ -27,6 +28,7 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()], // Components 设置按需引入插件
     }),
+    viteMockServe() // viteMockServe 设置 mockjs 插件
   ],
 });
 

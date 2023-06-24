@@ -4,11 +4,20 @@ import { defineConfig } from "vite";
 import { fileURLToPath, URL } from 'node:url';
 // 引入 postcss-preset-env 插件
 const postcssPresetEnv = require('postcss-preset-env');
+// Vite 构建工具的检查插件, 用于严格要求自己, 提升代码水平, 让错误输出在控制台阻止编译, 强迫自己解决问题
+import checker from "vite-plugin-checker";
 
 export default defineConfig({
   optimizeDeps: {
     exclude: [''] // 将指定数组中的以来进行依赖预购建
   },
+
+  plugins:[
+    checker({
+      typescript: true, // 检查 TypeScript 语法
+    })
+  ],
+
   css: {
 
     modules: {

@@ -23,5 +23,18 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
 
+let a= 1;
+a="123"
+
+// mock 数据获取
+const getUsers = async () => {
+  const res = await axios.get('/api/users');
+  console.log(res);
+}
+
+getUsers();
+
+
+
 app.use(createPinia()).use(router).use(VueAxios, axios).mount("#app");
 
