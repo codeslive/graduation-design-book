@@ -20,6 +20,13 @@ const usersList = mockJS.mock({
   }]
 })
 
+const usersLogin = mockJS.mock({
+  "data|100": [{
+    "id|+1": 1,
+    "name": "@cname",
+  }]
+})
+
 module.exports = [
   {
     method: 'get',
@@ -29,6 +36,17 @@ module.exports = [
         code: 200,
         msg: 'success',
         data: usersList
+      }
+    }
+  },
+  {
+    method: 'get',
+    url: '/api/login',
+    response: ({ body }) => {
+      return {
+        code: 200,
+        msg: '登录成功',
+        data: usersLogin
       }
     }
   }

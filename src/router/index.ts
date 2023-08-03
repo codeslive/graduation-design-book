@@ -12,12 +12,6 @@ declare module 'vue-router' {
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      redirect: {
-        name: 'admin'
-      }
-    },
 
     // 登录页面
     {
@@ -116,7 +110,7 @@ router.beforeEach((to, from, next) => {
     next();
   } else {
     // 否则跳转到登录页面
-    next('/admin');
+    next('/login');
   }
 });
 
