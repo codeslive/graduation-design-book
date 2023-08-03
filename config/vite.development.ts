@@ -17,6 +17,10 @@ export default defineConfig({
     open: false // 自动打开浏览器
   },
 
+  optimizeDeps: {
+    exclude: [] // 将指定数组中的依赖排除, 用于排除不需要打包的依赖
+  },
+
   plugins: [
     vue(), // 这个配置是 vite-plugin-vue 插件
     checker({

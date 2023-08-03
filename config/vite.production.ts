@@ -5,12 +5,12 @@ import viteCompression from 'vite-plugin-compression';
 // Vite 构建工具的 Vue 插件
 import vue from '@vitejs/plugin-vue';
 // element-plus 的按需引入插件
-// import AutoImport from 'unplugin-auto-import/vite';
-// import Components from 'unplugin-vue-components/vite';
-// import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 
 // 导入 vite-plugin-cdn-import 插件
-import ViteCDNPlugin from 'vite-plugin-cdn-import';
+// import ViteCDNPlugin from 'vite-plugin-cdn-import';
 
 export default defineConfig({
   
@@ -40,7 +40,7 @@ export default defineConfig({
     cssCodeSplit: true, // cssCodeSplit 设置是否将 css 代码分割成单独的文件
     minify: 'terser', // minify 设置是否压缩代码, 可选值为 boolean | 'terser' | 'esbuild', 默认为 terser
     assetsInlineLimit: 409600, // assetsInlineLimit 设置是否将小于指定大小的文件转换为 base64 格式, 默认为 4096, 设置为 0 时则关闭该功能
-    outDir: "dist", // outDir 设置打包后的文件夹名称
+    outDir: "docs", // outDir 设置打包后的文件夹名称
     assetsDir: "static", // assetsDir 设置静态资源的文件夹名称
   },
   plugins: [
@@ -53,39 +53,39 @@ export default defineConfig({
     }), // viteCompression 设置压缩插件
     vue(), // 这个配置是 vite-plugin-vue 插件 vite-plugin-vue 插件能够让我们在 Vue 项目中使用单文件组件
 
-    // AutoImport({
-    //   resolvers: [ElementPlusResolver()], // AutoImport 设置 element-plus 按需引入插件
-    // }),
-    // Components({
-    //   resolvers: [ElementPlusResolver()], // Components 设置 element-plus 按需引入插件
-    // }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()], // AutoImport 设置 element-plus 按需引入插件
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()], // Components 设置 element-plus 按需引入插件
+    }),
 
     // cdn 配置, 版本锁定, 防止 cdn 版本更新导致项目报错
-    ViteCDNPlugin({
-      modules: [
-        {
-          name: 'axios',
-          var: 'axios',
-          path: '//cdn.bootcdn.net/ajax/libs/axios/1.4.0/axios.min.js'
-        },
-        {
-          name:"vue",
-          var:"Vue",
-          path:"//cdn.bootcdn.net/ajax/libs/vue/3.2.47/vue.global.prod.js",
-        },
-        {
-          name:"vue-demi",
-          var:"VueDemi",
-          path:"//unpkg.com/vue-demi@0.14.5"
-        },
-        {
-          name:"element-plus",
-          var:"ElementPlus",
-          path:"//unpkg.com/element-plus@2.3.4",
-          css:"//unpkg.com/element-plus/dist/index.css"
-        },
-      ]
-    })
+    // ViteCDNPlugin({
+    //   modules: [
+    //     {
+    //       name: 'axios',
+    //       var: 'axios',
+    //       path: '//cdn.bootcdn.net/ajax/libs/axios/1.4.0/axios.min.js'
+    //     },
+    //     {
+    //       name:"vue",
+    //       var:"Vue",
+    //       path:"//cdn.bootcdn.net/ajax/libs/vue/3.2.47/vue.global.prod.js",
+    //     },
+    //     {
+    //       name:"vue-demi",
+    //       var:"VueDemi",
+    //       path:"//unpkg.com/vue-demi@0.14.5"
+    //     },
+    //     {
+    //       name:"element-plus",
+    //       var:"ElementPlus",
+    //       path:"//unpkg.com/element-plus@2.3.4",
+    //       css:"//unpkg.com/element-plus/dist/index.css"
+    //     },
+    //   ]
+    // })
   ],
 
 });
